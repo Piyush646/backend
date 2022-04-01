@@ -9,6 +9,7 @@ require("dotenv/config");
 const api = process.env.API_URL;
 const productsRouter=require('./routers/products')
 const categoriesRouter=require('./routers/categories')
+const usersRouter=require('./routers/users')
 
 app.use(cors())
 app.options('*',cors());
@@ -20,7 +21,7 @@ app.use(morgan("tiny"));
 //Routers
 app.use(`${api}/products`,productsRouter)
 app.use(`${api}/categories`,categoriesRouter)
-
+app.use(`${api}/users`,usersRouter)
 
 
 
